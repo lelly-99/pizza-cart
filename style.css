@@ -1,0 +1,78 @@
+body {
+background-color: lightsteelblue;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+.clearfix {
+    overflow: auto;
+  }
+.pizza {
+    border: 1px solid  lightsteelblue;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 0.3em;
+    flex : 1
+}
+.medium_pizza {
+    background-color: rgb(143, 197, 204);
+}
+
+.large_pizza {
+    background-color: rgb(101, 196, 196);
+}
+
+.small_pizza {
+    background-color: rgb(206, 248, 248);
+}
+
+.contact_details {
+    background-color: rgb(54, 113, 113);
+}
+
+@media (min-width: 960px) {
+    .pizzas {
+        display: flex;
+    }
+
+}
+
+
+
+.center-div {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    padding: 20px;
+    background-color: rgb(99, 221, 181);
+    border-radius: 0.3em;
+}
+
+
+.center-div span {
+    margin-right: 10px;
+}
+
+button {
+    margin: 10px;
+    background-color: rgb(53, 123, 123);
+    float: left;
+}
+
+.add, .remove {
+    gap: 10px;
+    border-radius: 7px;
+    border: none;
+    height: 30px;
+    width: 30px; 
+} 
+
+.payment {
+    border-radius: 7px;
+    border: none;
+    height: 34px;
+    width: 100px; 
+}
+
