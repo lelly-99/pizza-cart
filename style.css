@@ -3,9 +3,6 @@ background-color: lightsteelblue;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h1 {
-    text-align: center;
-}
 .clearfix {
     overflow: auto;
   }
@@ -69,17 +66,21 @@ button {
     padding: 20px;
 }
 
-
 .cartCount {
-    background-color: rgb(84, 186, 186);
+    position: relative;
+    top: -5px;
+    left: -10px;
+    background-color:rgb(56, 141, 141);
+    color: white;
+    padding: 2px 5px;
     border-radius: 50%;
-    top: 92px;
-    width: 20px;
-    height: 20px;
-    padding: 5px;
-    position: absolute;
-    
-}
+    font-size: 12px;
+  }
 
+.contain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 

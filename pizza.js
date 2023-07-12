@@ -66,14 +66,8 @@ function pizzaCart() {
             }
         },
         checkout() {
-            if (this.price >= 39.00) {
-                this.count = 0;
-                this.price = 0;
-                this.size = [];
-                this.small = 0;
-                this.medium = 0;
-                this.large = 0;
-                this.checkoutMessage = "Payment Successful..."
+            if (this.price <= 39.00) {
+                this.checkoutMessage = "Insuficient funds"
                 setTimeout(() => {
                     this.checkoutMessage = ""
                 }, 2000);
