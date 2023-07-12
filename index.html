@@ -17,40 +17,64 @@
   <div x-data="pizzaCart()">
     <div class="center-div">
       <i style="font-size:24px;" class="fa">&#xf07a; <span x-text="count"></span></i>
-      <p class="i">Total: R<span x-text="price"></span></p>
-      <button @click="reset" class="payment">Clear Cart</button>
-      <button class="payment" @click="checkout" x-init="reset">Check out</button>
+      <table>
+        <tr>
+          <td>Small</td>
+          <td>R<span x-text="small"></span></td>
+          <td><button class="add" x-on:click="addSmall">+</button></td>
+          <td><button class="remove" x-on:click="removeSmall">-</button></td>
+        </tr>
+        <tr>
+          <td>Medium</td>
+          <td>R<span x-text="medium"></span></td>
+          <td><button class="add" x-on:click="addMedium">+</button></td>
+          <td><button class="remove" x-on:click="removeMedium">-</button></td>
+        </tr>
+        <tr>
+          <td>Large</td>
+          <td>R<span x-text="large"></span></td>
+          <td><button class="add" x-on:click="addLarge">+</button></td>
+          <td><button class="remove" x-on:click="removeLarge">-</button></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td><p class="i">Total Cost:</p></td>
+          <td>R<span x-text="price"></span></td>
+        </tr>
+        <tr>
+          <td><button @click="clearCart" class="payment hide">Clear Cart</button></td>
+          <td><button class="payment"  @click="checkout">Check out</button></td>
+        </tr>
+      </table>
       <p style="text-align: center;">
         <span style="color: green; font-size: large;" x-text="checkoutMessage"></span>
         <span style="color: red; font-size: large;" x-text="errorMessage"></span>
         <span style="font-size: large;" x-text="cartMessage"></span>
       </p>
     </div>
-  </div>
-  <div class="pizzas">
-    <div class="pizza small_pizza clearfix">
-      <h2>Small Pizza</h2>
-      <img src="pizza.png" width="100">
-      <h3>R39.00</h3>
-      <div>3 toppings with regular pizza sauce</div><br>
-      <button class="add" x-on:click="addSmall">+</button>
-      <button class="remove" x-on:click="removeSmall">-</button>
-    </div>
-    <div class="pizza medium_pizza clearfix">
-      <h2>Medium Pizza</h2>
-      <img src="pizza.png" width="130">
-      <h3>R89.00</h3>
-      <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-      <button class="add" x-on:click="addMedium">+</button>
-      <button class="remove" x-on:click="removeMedium">-</button>
-    </div>
-    <div class="pizza large_pizza clearfix">
-      <h2>Large Pizza</h2>
-      <img src="pizza.png" width="160">
-      <h3>R129.00</h3>
-      <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-      <button class="add" x-on:click="addLarge">+</button>
-      <button class="remove" x-on:click="removeLarge">-</button>
+    <div class="pizzas">
+      <div class="pizza small_pizza clearfix">
+        <h2>Small Pizza</h2>
+        <img src="pizza.png" width="100">
+        <h3>R39.00</h3>
+        <div>3 toppings with regular pizza sauce</div><br>
+        <button class="payment " x-on:click="addSmall">Buy</button>
+      </div>
+      <div class="pizza medium_pizza clearfix">
+        <h2>Medium Pizza</h2>
+        <img src="pizza.png" width="130">
+        <h3>R89.00</h3>
+        <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
+        <button class="payment mediumBuy">Buy</button>
+      </div>
+      <div class="pizza large_pizza clearfix">
+        <h2>Large Pizza</h2>
+        <img src="pizza.png" width="160">
+        <h3>R129.00</h3>
+        <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
+        <button class="payment largeBuy">Buy</button>
+      </div>
     </div>
   </div>
   <div class="pizza contact_details">
