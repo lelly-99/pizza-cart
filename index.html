@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,26 +17,26 @@
     </div>
     <div class="center-div">
       <table>
-        <tr class="small">
+        <tr class="small" x-show="buySmallPizza">
           <td>Small</td>
           <td>R<span x-text="small"></span></td>
           <td><button class="add" x-on:click="addSmall">+</button></td>
           <td><button class="remove" x-on:click="removeSmall">-</button></td>
         </tr>
-        <tr class="medium">
+        <tr class="medium" x-show="buyMediumPizza">
           <td>Medium</td>
           <td>R<span x-text="medium"></span></td>
           <td><button class="add" x-on:click="addMedium">+</button></td>
           <td><button class="remove" x-on:click="removeMedium">-</button></td>
         </tr>
-        <tr class="large">
+        <tr class="large" x-show="buyLargePizza">
           <td>Large</td>
           <td>R<span x-text="large"></span></td>
           <td><button class="add" x-on:click="addLarge">+</button></td>
           <td><button class="remove" x-on:click="removeLarge">-</button></td>
         </tr>
       </table>
-      <table>
+      <table x-show="totalCost">
         <tr>
           <td><p class="i">Total Cost:</p></td>
           <td>R<span x-text="price" x-bind:value="paymentAmount"></span></td>
@@ -59,21 +58,21 @@
         <img src="pizza.png" width="100">
         <h3>R39.00</h3>
         <div>3 toppings with regular pizza sauce</div><br>
-        <button class="payment" x-on:click="addSmall">Buy</button>
+        <button class="payment" x-on:click="addSmall, buySmallPizza = !buySmallPizza, totalCost = !totalCost">Buy</button>
       </div>
       <div class="pizza medium_pizza clearfix">
         <h2>Medium Pizza</h2>
         <img src="pizza.png" width="130">
         <h3>R89.00</h3>
         <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment" x-on:click="addMedium">Buy</button>
+        <button class="payment" x-on:click="addMedium, buyMediumPizza = !buyMediumPizza, totalCost = !totalCost">Buy</button>
       </div>
       <div class="pizza large_pizza clearfix">
         <h2>Large Pizza</h2>
         <img src="pizza.png" width="160">
         <h3>R129.00</h3>
         <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment" x-on:click="addLarge">Buy</button>
+        <button class="payment" x-on:click="addLarge, buyLargePizza = !buyLargePizza, totalCost = !totalCost">Buy</button>
       </div>
     </div>
   </div>
@@ -87,7 +86,6 @@
       </div>
     </div>
   </div>
-
   <script src="pizza.js"></script>
 </body>
 </html>
