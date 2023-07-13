@@ -58,21 +58,21 @@
         <img src="pizza.png" width="100">
         <h3>R39.00</h3>
         <div>3 toppings with regular pizza sauce</div><br>
-        <button class="payment" x-on:click="addSmall, buySmallPizza = !buySmallPizza, totalCost = !totalCost">Buy</button>
+        <button class="payment" x-on:click="addSmall, buySmallPizza = true , totalCost = true">Buy</button>
       </div>
       <div class="pizza medium_pizza clearfix">
         <h2>Medium Pizza</h2>
         <img src="pizza.png" width="130">
         <h3>R89.00</h3>
         <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment" x-on:click="addMedium, buyMediumPizza = !buyMediumPizza, totalCost = !totalCost">Buy</button>
+        <button class="payment" x-on:click="addMedium, buyMediumPizza = true, totalCost = true">Buy</button>
       </div>
       <div class="pizza large_pizza clearfix">
         <h2>Large Pizza</h2>
         <img src="pizza.png" width="160">
         <h3>R129.00</h3>
         <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment" x-on:click="addLarge, buyLargePizza = !buyLargePizza, totalCost = !totalCost">Buy</button>
+        <button class="payment" x-on:click="addLarge, buyLargePizza = true, totalCost = true">Buy</button>
       </div>
     </div>
   </div>
