@@ -19,19 +19,19 @@
       <table>
         <tr class="small" x-show="buySmallPizza">
           <td>Small</td>
-          <td>R<span x-text="small"></span></td>
+          <td>R<span x-text="small.toFixed(2)"></span></td>
           <td><button class="add" x-on:click="addSmall">+</button></td>
           <td><button class="remove" x-on:click="removeSmall">-</button></td>
         </tr>
         <tr class="medium" x-show="buyMediumPizza">
           <td>Medium</td>
-          <td>R<span x-text="medium"></span></td>
+          <td>R<span x-text="mediumtoFixed(2)"></span></td>
           <td><button class="add" x-on:click="addMedium">+</button></td>
           <td><button class="remove" x-on:click="removeMedium">-</button></td>
         </tr>
         <tr class="large" x-show="buyLargePizza">
           <td>Large</td>
-          <td>R<span x-text="large"></span></td>
+          <td>R<span x-text="largetoFixed(2)"></span></td>
           <td><button class="add" x-on:click="addLarge">+</button></td>
           <td><button class="remove" x-on:click="removeLarge">-</button></td>
         </tr>
@@ -57,21 +57,21 @@
       <div class="pizza small_pizza clearfix">
         <h2>Small Pizza</h2>
         <img src="pizza.png" width="100">
-        <h3>R39.00</h3>
+        <h3>R39.99</h3>
         <div>3 toppings with regular pizza sauce</div><br>
         <button class="payment" x-on:click="addSmall, buySmallPizza = true , totalCost = true">Buy</button>
       </div>
       <div class="pizza medium_pizza clearfix">
         <h2>Medium Pizza</h2>
         <img src="pizza.png" width="130">
-        <h3>R89.00</h3>
+        <h3>R89.99</h3>
         <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
         <button class="payment" x-on:click="addMedium, buyMediumPizza = true, totalCost = true">Buy</button>
       </div>
       <div class="pizza large_pizza clearfix">
         <h2>Large Pizza</h2>
         <img src="pizza.png" width="160">
-        <h3>R129.00</h3>
+        <h3>R129.99</h3>
         <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
         <button class="payment" x-on:click="addLarge, buyLargePizza = true, totalCost = true">Buy</button>
       </div>
