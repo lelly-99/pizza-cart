@@ -19,19 +19,19 @@
       <table>
         <tr class="small" x-show="buySmallPizza">
           <td>Small</td>
-          <td>R<span x-text="small.toFixed(2)"></span></td>
+          <td>R<span x-text="small"></span></td>
           <td><button class="add" x-on:click="addSmall">+</button></td>
           <td><button class="remove" x-on:click="removeSmall">-</button></td>
         </tr>
         <tr class="medium" x-show="buyMediumPizza">
           <td>Medium</td>
-          <td>R<span x-text="mediumtoFixed(2)"></span></td>
+          <td>R<span x-text="medium"></span></td>
           <td><button class="add" x-on:click="addMedium">+</button></td>
           <td><button class="remove" x-on:click="removeMedium">-</button></td>
         </tr>
         <tr class="large" x-show="buyLargePizza">
           <td>Large</td>
-          <td>R<span x-text="largetoFixed(2)"></span></td>
+          <td>R<span x-text="large"></span></td>
           <td><button class="add" x-on:click="addLarge">+</button></td>
           <td><button class="remove" x-on:click="removeLarge">-</button></td>
         </tr>
@@ -39,7 +39,7 @@
       <table x-show="totalCost">
         <tr>
           <td><p class="i">Total Cost:</p></td>
-          <td>R<span x-text="price" x-bind:value="paymentAmount"></span></td>
+          <td>R<span x-text="price.toFixed(2)" x-bind:value="paymentAmount"></span></td>
         </tr>
         <tr>
           <td ><input x-model="paymentAmount" class="paymentAmount"></input></td>
