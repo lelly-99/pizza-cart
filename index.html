@@ -13,7 +13,7 @@
   <div x-data="pizzaCart()">
     <div class="contain">
       <h1>Perfect Pizza</h1>
-      <i style="font-size:30px;" class="fa">&#xf07a;<span x-text="count" class="cartCount"></span></i>
+      <i style="font-size:30px;" class="fa" x-on:click="clearcart = (count !== 0)">&#xf07a;<span x-text="count" class="cartCount"></span></i>
     </div>
     <div class="center-div">
       <table>
@@ -46,6 +46,7 @@
           <td ><button class="payment" x-on:click="checkout" >Check out</button></td>
         </tr>
       </table>
+      <td ><button class="payment" x-on:click="clearCart" x-show="clearcart">Clear Cart</button></td>
       <p style="text-align: center;">
         <span style="color: green; font-size: large;" x-text="checkoutMessage"></span>
         <span style="color: red; font-size: large;" x-text="errorMessage"></span>

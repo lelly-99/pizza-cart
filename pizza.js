@@ -8,11 +8,32 @@ document.addEventListener('alpine:init', () => {
         large: 0,
         checkoutMessage: "",
         errorMessage: "",
+        cartMessage: "",
         paymentAmount: 0,
         buyMediumPizza: false,
         buyLargePizza: false,
         buySmallPizza: false,
         totalCost: false,
+        clearcart: false,
+
+        clearCart() {
+            this.count = 0;
+            this.price = 0;
+            this.size = [];
+            this.small = 0;
+            this.medium = 0;
+            this.large = 0;
+            this.buyMediumPizza = false;
+            this.buyLargePizza = false;
+            this.buySmallPizza = false;
+            this.totalCost = false;
+            this.clearcart = false,
+            this.paymentAmount = 0;
+            this.cartMessage = "You have cleared your cart..."
+            setTimeout(() => {
+                this.cartMessage = "";
+            }, 2000);
+        },
         addSmall() {
             this.small += 39.00;
             this.count += 1;
