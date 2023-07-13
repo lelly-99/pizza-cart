@@ -50,7 +50,7 @@ button {
     width: 25px; 
 } 
 
-.payment {
+.payment, input {
     border-radius: 7px;
     border: none;
     height: 30px;

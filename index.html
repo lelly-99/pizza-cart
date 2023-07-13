@@ -7,9 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pizza Cart</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+  <script src="//unpkg.com/alpinejs" defer></script>
   <script src="pizza.js" defer></script>
-  <script src="index.js" defer></script>
 </head>
 <body>
   <div x-data="pizzaCart()">
@@ -41,11 +40,11 @@
       <table>
         <tr>
           <td><p class="i">Total Cost:</p></td>
-          <td>R<span x-text="price"></span></td>
+          <td>R<span x-text="price" x-bind:value="paymentAmount"></span></td>
         </tr>
         <tr>
-          <td><button @click="clearCart" class="payment hide">Clear Cart</button></td>
-          <td><button class="payment"  @click="checkout">Check out</button></td>
+          <td ><input x-model="paymentAmount" class="paymentAmount"></input></td>
+          <td ><button class="payment" x-on:click="checkout" >Check out</button></td>
         </tr>
       </table>
       <p style="text-align: center;">
@@ -60,21 +59,21 @@
         <img src="pizza.png" width="100">
         <h3>R39.00</h3>
         <div>3 toppings with regular pizza sauce</div><br>
-        <button class="payment">Buy</button>
+        <button class="payment" x-on:click="addSmall">Buy</button>
       </div>
       <div class="pizza medium_pizza clearfix">
         <h2>Medium Pizza</h2>
         <img src="pizza.png" width="130">
         <h3>R89.00</h3>
         <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment">Buy</button>
+        <button class="payment" x-on:click="addMedium">Buy</button>
       </div>
       <div class="pizza large_pizza clearfix">
         <h2>Large Pizza</h2>
         <img src="pizza.png" width="160">
         <h3>R129.00</h3>
         <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment">Buy</button>
+        <button class="payment" x-on:click="addLarge">Buy</button>
       </div>
     </div>
   </div>
@@ -88,6 +87,7 @@
       </div>
     </div>
   </div>
-</body>
 
+  <script src="pizza.js"></script>
+</body>
 </html>
