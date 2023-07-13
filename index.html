@@ -17,22 +17,22 @@
     </div>
     <div class="center-div">
       <table>
-        <tr class="small" x-show="buySmallPizza">
+        <tr class="small">
           <td>Small</td>
-          <td>R<span x-text="small"></span></td>
-          <td><button class="add" x-on:click="addSmall">+</button></td>
+          <td>R<span x-text="small.toFixed(2)"></span></td>
+          <td><button class="add" x-on:click="addSmall, totalCost = true">+</button></td>
           <td><button class="remove" x-on:click="removeSmall">-</button></td>
         </tr>
-        <tr class="medium" x-show="buyMediumPizza">
+        <tr class="medium">
           <td>Medium</td>
-          <td>R<span x-text="medium"></span></td>
-          <td><button class="add" x-on:click="addMedium">+</button></td>
+          <td>R<span x-text="medium.toFixed(2)"></span></td>
+          <td><button class="add" x-on:click="addMedium, totalCost = true">+</button></td>
           <td><button class="remove" x-on:click="removeMedium">-</button></td>
         </tr>
-        <tr class="large" x-show="buyLargePizza">
+        <tr class="large">
           <td>Large</td>
-          <td>R<span x-text="large"></span></td>
-          <td><button class="add" x-on:click="addLarge">+</button></td>
+          <td>R<span x-text="large.toFixed(2)"></span></td>
+          <td><button class="add" x-on:click="addLarge, totalCost = true">+</button></td>
           <td><button class="remove" x-on:click="removeLarge">-</button></td>
         </tr>
       </table>
@@ -59,21 +59,21 @@
         <img src="pizza.png" width="100">
         <h3>R39.99</h3>
         <div>3 toppings with regular pizza sauce</div><br>
-        <button class="payment" x-on:click="addSmall, buySmallPizza = true , totalCost = true">Buy</button>
+        <button class="payment" x-on:click="addSmall, totalCost = true">Buy</button>
       </div>
       <div class="pizza medium_pizza clearfix">
         <h2>Medium Pizza</h2>
         <img src="pizza.png" width="130">
         <h3>R89.99</h3>
         <div>4 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment" x-on:click="addMedium, buyMediumPizza = true, totalCost = true">Buy</button>
+        <button class="payment" x-on:click="addMedium, totalCost = true">Buy</button>
       </div>
       <div class="pizza large_pizza clearfix">
         <h2>Large Pizza</h2>
         <img src="pizza.png" width="160">
         <h3>R129.99</h3>
         <div>5 toppings with regular pizza sauce and our <em>signature</em> sauce</div><br>
-        <button class="payment" x-on:click="addLarge, buyLargePizza = true, totalCost = true">Buy</button>
+        <button class="payment" x-on:click="addLarge, totalCost = true">Buy</button>
       </div>
     </div>
   </div>

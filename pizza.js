@@ -10,9 +10,6 @@ document.addEventListener('alpine:init', () => {
         errorMessage: "",
         cartMessage: "",
         paymentAmount: 0,
-        buyMediumPizza: false,
-        buyLargePizza: false,
-        buySmallPizza: false,
         totalCost: false,
         clearcart: false,
 
@@ -23,9 +20,6 @@ document.addEventListener('alpine:init', () => {
             this.small = 0;
             this.medium = 0;
             this.large = 0;
-            this.buyMediumPizza = false;
-            this.buyLargePizza = false;
-            this.buySmallPizza = false;
             this.totalCost = false;
             this.clearcart = false,
             this.paymentAmount = 0;
@@ -85,9 +79,6 @@ document.addEventListener('alpine:init', () => {
                 this.small = 0;
                 this.medium = 0;
                 this.large = 0;
-                this.buyMediumPizza = false;
-                this.buyLargePizza = false;
-                this.buySmallPizza = false;
                 this.totalCost = false;
                 this.paymentAmount = 0;
                 setTimeout(() => {
